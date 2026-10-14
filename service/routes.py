@@ -129,7 +129,7 @@ def list_products():
     results = [product.serialize() for product in products]
     app.logger.info("[%s] Products returned", len(results))
     return results, status.HTTP_200_OK
-    
+
 ######################################################################
 # R E A D   A   P R O D U C T
 ######################################################################
