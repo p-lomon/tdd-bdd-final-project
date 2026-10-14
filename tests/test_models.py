@@ -199,7 +199,7 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(found.count(), count)
         for product in found:
             self.assertEqual(product.category, category)
-    
+
     def test_update_product_with_missing_id_raise_error(self):
         """It should raise DataValidationError if id is missing"""
         product = ProductFactory()
@@ -208,7 +208,7 @@ class TestProductModel(unittest.TestCase):
         product.create()
         logger.info("Created product: %s", product)
         self.assertIsNotNone(product.id)
-        product.id = None           
+        product.id = None
         with self.assertRaises(DataValidationError) as context:
             product.update()
         self.assertIn("Update called with empty ID field", str(context.exception))
